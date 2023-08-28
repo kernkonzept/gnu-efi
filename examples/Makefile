@@ -28,4 +28,5 @@ LDFLAGS_all_sigma0 =
 CPPFLAGS       += -fshort-wchar -fPIC \
                   -I$(OBJ_BASE)/include/contrib/gnu-efi/$(EFI_ARCH)
 LDFLAGS         = -nocrt -T$(LDSCRIPT) -L$(OBJ_BASE)/lib/$(subst -,/,$(SYSTEM)) \
-		  -nostdlib -shared -Bsymbolic
+		  -nostdlib -shared -Bsymbolic --defsym=ImageBase=0 \
+		  --defsym=EFI_SUBSYSTEM=0xa
