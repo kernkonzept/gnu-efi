@@ -19,6 +19,10 @@ Revision History
 
 --*/
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "efidebug.h"
 #include "efipart.h"
 #if defined(_M_X64) || defined(__x86_64__) || defined(__amd64__)
@@ -31,10 +35,12 @@ Revision History
 #include "aarch64/efilibplat.h"
 #elif defined (_M_ARM) || defined(__arm__)
 #include "arm/efilibplat.h"
-#elif defined (_M_MIPS64) || defined(__mips64__)
+#elif defined (_M_MIPS64) || defined(__mips64__) || defined(__mips64)
 #include "mips64el/efilibplat.h"
 #elif defined (__riscv) && __riscv_xlen == 64
 #include "riscv64/efilibplat.h"
+#elif defined (__loongarch64)
+#include "loongarch64/efilibplat.h"
 #endif
 #include "efilink.h"
 #include "efirtlib.h"
@@ -281,17 +287,17 @@ ZeroMem (
     IN UINTN     Size
     );
 
-VOID
+VOID EFIAPI
 SetMem (
     IN VOID     *Buffer,
     IN UINTN    Size,
     IN UINT8    Value
     );
 
-VOID
+VOID EFIAPI
 CopyMem (
     IN VOID     *Dest,
-    IN CONST VOID     *Src,
+    IN VOID     *Src,
     IN UINTN    len
     );
 
@@ -1075,5 +1081,9 @@ extern EFI_DEVICE_IO_INTERFACE  *GlobalIoFncs;
 #define readpci32(_Addr)             (UINT32)ReadPciConfig(GlobalIoFncs,  IO_UINT32, (UINTN)_Addr)
 
 #define Port80(_PostCode)   GlobalIoFncs->Io.Write (GlobalIoFncs, IO_UINT16, (UINT64)0x80, 1, &(_PostCode))
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

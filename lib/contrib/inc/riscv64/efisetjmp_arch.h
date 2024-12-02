@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: GPL-2.0+ OR BSD-2-Clause */
+
 #ifndef GNU_EFI_RISCV64_SETJMP_H
 #define GNU_EFI_RISCV64_SETJMP_H
 
@@ -33,6 +35,6 @@ typedef struct {
 	UINT64	fs9;
 	UINT64	fs10;
 	UINT64	fs11;
-} ALIGN(JMPBUF_ALIGN) jmp_buf[1];
+} EFI_ALIGN(JMPBUF_ALIGN) jmp_buf[1];
 
 #endif /* GNU_EFI_RISCV64_SETJMP_H */

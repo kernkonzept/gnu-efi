@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-2.0+
+// SPDX-License-Identifier: GPL-2.0+ OR BSD-2-Clause
 /*
  * Copyright Heinrich Schuchardt <xypron.glpk@gmx.de>
  */
@@ -67,3 +67,7 @@ longjmp:
 	seqz a0, a1
 	add a0, a0, a1
 	ret
+
+#if defined(__ELF__) && defined(__linux__)
+	.section .note.GNU-stack,"",%progbits
+#endif

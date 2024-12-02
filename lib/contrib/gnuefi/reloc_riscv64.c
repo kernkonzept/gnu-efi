@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-2.0+
+// SPDX-License-Identifier: GPL-2.0+ OR BSD-3-Clause
 /* reloc_riscv.c - position independent ELF shared object relocator
    Copyright (C) 2018 Alexander Graf <agraf@suse.de>
    Copyright (C) 2014 Linaro Ltd. <ard.biesheuvel@linaro.org>
@@ -81,8 +81,7 @@ EFI_STATUS EFIAPI _relocate(long ldbase, Elf_Dyn *dyn)
 			*addr = ldbase + rel->r_addend;
 			break;
 		default:
-			/* Panic */
-			while (1) ;
+				break;
 		}
 		rel = (Elf_Rela *)((char *)rel + relent);
 		relsz -= relent;

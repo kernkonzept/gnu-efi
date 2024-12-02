@@ -30,11 +30,11 @@ SRC_C_libgnuefi.p.a      = gnuefi/reloc_$(EFI_ARCH).c
 SRC_S_libgnuefi-crt0.p.a = gnuefi/crt0-efi-$(EFI_ARCH).S
 
 FILES_C = boxdraw smbios console crc data debug dpath \
-          error event exit guid hand hw init lock  \
+          entry error event exit guid hand hw init lock  \
           misc pause print sread str cmdline \
           runtime/rtlock runtime/efirtlib runtime/rtstr runtime/vm runtime/rtdata \
           $(EFI_ARCH)/initplat $(EFI_ARCH)/math
-FILES_S = $(EFI_ARCH)/setjmp
+FILES_S = ctors $(EFI_ARCH)/setjmp
 
 FILES_S-x86   = $(EFI_ARCH)/efi_stub
 FILES_C-amd64 = $(EFI_ARCH)/callwrap
