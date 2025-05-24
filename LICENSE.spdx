@@ -16,8 +16,8 @@ Created: 2023-07-27T00:00:00Z
 PackageName: gnu-efi
 SPDXID: SPDXRef-gnu-efi
 PackageOriginator: Organization: Kernkonzept GmbH (info@kernkonzept.com)
-PackageLicenseDeclared: GPL-2.0-only
-PackageLicenseConcluded: GPL-2.0-only
+PackageLicenseDeclared: MIT
+PackageLicenseConcluded: MIT
 FilesAnalyzed: false
 PackageCopyrightText: NOASSERTION
 PackageDownloadLocation: NOASSERTION
