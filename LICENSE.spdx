@@ -26,9 +26,8 @@ PackageName: gnu-efi-contrib
 SPDXID: SPDXRef-gnu-efi-contrib
 PackageFileName: ./lib/contrib/gnuefi
 PackageOriginator: Organization: Hewlet-Packard Co.
-# derived from README.gnuefi
-PackageLicenseDeclared: GPL-2.0-or-later
-PackageLicenseConcluded: GPL-2.0-or-later
+PackageLicenseDeclared: (GPL-2.0-or-later OR (BSD-2-Clause OR BSD-3-Clause)) OR BSD-2-Clause OR BSD-3-Clause
+PackageLicenseConcluded: BSD-2-Clause OR BSD-3-Clause
 FilesAnalyzed: false
 PackageCopyrightText: NOASSERTION
 PackageDownloadLocation: NOASSERTION
